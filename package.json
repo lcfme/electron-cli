@@ -34,6 +34,7 @@
     "init-package-json": "^1.9.4",
     "inquirer": "^1.2.1",
     "leek": "0.0.23",
+    "mkdirp": "^0.5.1",
     "node-fetch": "^1.6.3",
     "nopt": "^3.0.6",
     "npm": "^3.10.8",
