@@ -4,9 +4,10 @@ const runSequence = require('run-sequence')
 const combine = require('stream-combiner2')
 const babel = require('gulp-babel')
 const gutil = require('gulp-util')
+const chmod = require('gulp-chmod')
 
 gulp.task('dev',(done)=> {
-  runSequence('lint','babel','watch',done)
+  runSequence('lint','babel','watch','chmod',done)
 })
 
 gulp.task('lint', () => {
@@ -14,10 +15,24 @@ gulp.task('lint', () => {
     gulp.src(['src/**/*.js']),
     eslint({ fix: true }),
     eslint.format(),
-    gulp.dest('lib')
+    gulp.dest('src')
   ])
 
   return taskSrc.on('error', handleError)
+})
+
+gulp.task('chmod',()=> {
+  const taskSrc = combine.obj([
+    gulp.src(['dist/cli.js']),
+    chmod({
+      owner: {read:true,write:true,execute:true},
+      group: {execute:true},
+      others: {execute:true}
+    }),
+    gulp.dest('dist')
+  ])
+
+  return taskSrc.on('error',handleError)
 })
 
 gulp.task('babel',()=> {

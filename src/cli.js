@@ -1,6 +1,10 @@
 #!/usr/bin/env node
-import chalk from 'chalk'
-import ora from 'ora'
 import cli from 'yargs'
 
-console.log('hi')
+// Provide a title to the process in `ps`
+process.title = 'electron-cli'
+
+cli.commandDir('./commands')
+.demand(1)
+.help()
+.argv
