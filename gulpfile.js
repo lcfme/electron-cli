@@ -47,6 +47,7 @@ gulp.task('babel',()=> {
 
 gulp.task('watch',()=> {
   gulp.watch(['src/**/*.js'],['babel'])
+  gulp.watch(['dist/cli.js'],['chmod'])
 })
 
 function handleError (err) {
