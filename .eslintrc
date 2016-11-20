@@ -1,5 +1,5 @@
 {
-  "extends": ["standard"],
+  "extends": ["airbnb-base","standard"],
   "rules": {
     "complexity": [1, { "max": 5 }],
     "semi": "error"
