@@ -29,9 +29,6 @@
     "eslint-plugin-promise": "^3.3.2",
     "eslint-plugin-standard": "^2.0.1",
     "exit": "^0.1.2",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1",
-    "gulp-util": "^3.0.7",
     "inquirer": "^1.2.1",
     "jsonfile": "^2.4.0",
     "leek": "0.0.23",
@@ -48,6 +45,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-util": "^3.0.7",
     "mocha": "^3.1.0"
   }
 }
