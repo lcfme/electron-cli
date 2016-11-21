@@ -11,6 +11,7 @@ import checkSystem from '../validate/check-system'
 import createDir from '../init/dir'
 import initJson from '../init/json'
 import initGit from '../init/git'
+import initNpm from '../init/npm'
 import changeDir from '../util/change-dir'
 
 export const command = 'init [dir]'
@@ -23,7 +24,7 @@ export const builder = {
 }
 
 export const handler = async (argv) => {
-  const initSpinner = ora('Getting versions')
+  const initSpinner = ora('Getting versions').start()
 
   const request = await fetch('https://registry.npmjs.org/electron').then(res => res.json())
 
@@ -87,6 +88,8 @@ export const handler = async (argv) => {
 
   const { electronVersion, boilerPlate, ...rest } = await inquirer.prompt(questions)
 
+  const dirSpinner = ora('Initializing Directory').start()
+
   const name = argv.dir || rest.name
 
   const createdDir = await createDir(name)
@@ -105,9 +108,11 @@ export const handler = async (argv) => {
 
   await changeDir(createdDir)
 
-  await initGit(createdDir)
+  await initGit()
 
-  console.log(chalk.green(`To start enter the ${name} directory and run npm install`))
+  await initNpm()
 
-  console.log(chalk.green(`then you can run npm start to run the electron application`))
+  dirSpinner.succeed()
+
+  console.log(chalk.green(`To start enter the ${name} directory, then you can run npm start to run your electron application`))
 }

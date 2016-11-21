@@ -1,12 +1,13 @@
 {
   "name": "electron-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Command line tool for developing useful electron apps",
   "main": "index.js",
   "scripts": {
     "test": "gulp mocha",
     "start": "./dist/cli.js",
     "dev": "gulp dev",
+    "lint": "gulp lint",
     "coverage": "nyc --reporter=lcov --all --reporter=text-lcov npm test"
   },
   "bin": {

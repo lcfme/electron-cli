@@ -3,8 +3,7 @@ export default function (dir) {
     try {
       process.chdir(dir)
       resolve()
-    }
-    catch (err) {
+    } catch (err) {
       reject(err)
     }
   })
