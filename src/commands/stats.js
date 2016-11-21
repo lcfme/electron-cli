@@ -15,11 +15,10 @@ export const handler = async (argv) => {
     colWidths: [15, 15]
   })
 
-  for (const component in versions) {
-    if (versions.hasOwnProperty(component)) {
-      table.push({ [component]: versions[component] })
-    }
-  }
+  Object.keys(versions).forEach((component) => {
+    table.push({ [component]: versions[component] })
+  })
+
   table.push({ 'electron-cli': pkg.version })
   console.log(table.toString())
 }

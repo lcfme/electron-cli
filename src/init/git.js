@@ -1,5 +1,6 @@
-import pkg from '../../package.json'
 import denodeify from 'denodeify'
+import pkg from '../../package.json'
+
 const exec = denodeify(require('child_process').exec)
 
 export default function (dir) {
