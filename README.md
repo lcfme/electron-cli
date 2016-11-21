@@ -13,7 +13,7 @@ Features
 
 * [done] Create new project
 * [done] Get useful electron info such as(version numbers of Chromium, Node.js , and electron-cli)
-* [wip] Run the electron app
+* [done] Run the electron app on the current directory either with the locally installed electron or the global one
 * [wip] Pack the application for distribution
 * [wip] Build native node modules
 
