@@ -36,5 +36,5 @@ entrypoint for all the functionality marked as done above.
 electron-cli init my-new-app
 ```
 
-This will create a new folder `my-new-app`, initialize a Git project in it,
-add the basic electron project structure.
+This will create a new folder `my-new-app`, initialize a Git project in it and
+adds the basic electron quick start project.
