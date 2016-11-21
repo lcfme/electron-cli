@@ -12,7 +12,7 @@ Features
 ------------------------------------------------------------------------------
 
 * [done] Create new project
-* [wip] Get useful electron info such as(version numbers of Chromium, Node.js , and electron-cli)
+* [done] Get useful electron info such as(version numbers of Chromium, Node.js , and electron-cli)
 * [wip] Run the electron app
 * [wip] Pack the application for distribution
 * [wip] Build native node modules
@@ -38,3 +38,10 @@ electron-cli init my-new-app
 
 This will create a new folder `my-new-app`, initialize a Git project in it and
 adds the basic electron quick start project.
+
+### Get Info of current installed electron
+
+```
+electron-cli stats
+```
+This will print the versions of the current installed electron instance
