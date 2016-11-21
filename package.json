@@ -1,6 +1,6 @@
 {
   "name": "electron-cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Command line tool for developing useful electron apps",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "coverage": "nyc --reporter=lcov --all --reporter=text-lcov npm test"
   },
   "bin": {
-    "electron-cli": "./bin/electron-cli"
+    "electron-cli": "./dist/cli.js"
   },
   "keywords": [
     "electron",
