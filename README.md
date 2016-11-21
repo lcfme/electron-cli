@@ -1,22 +1,40 @@
-# electron-cli
+electron-cli
+==============================================================================
 
-An electron command line utility.
+[![Latest NPM release][npm-badge]][npm-badge-url]
 
-## Feature roadmap
+[npm-badge]: https://img.shields.io/npm/v/ember-cli.svg
+[npm-badge-url]: https://www.npmjs.com/package/electron-cli
 
-* App creation
-* App execution for development
-* App packaging though electron-builder
-* Native module compilation though electron-builder
+An [electron](http://electron.atom.io/) command line utility.
 
-## Goal
+Features
+------------------------------------------------------------------------------
 
-The goal of this project is to create a tool to quickly start a new electron app,
-there is no perfect way to start any project, but here we try to use the accepted
-defaults for a entry App as defined by the electron community as a whole.
+* [done] Create new project
+* [wip] Get useful electron info such as(version numbers of Chromium, Node.js , and electron-cli)
+* [wip] Run the electron app
+* [wip] Pack the application for distribution
+* [wip] Build native node modules
 
-## Usage
+Installation
+------------------------------------------------------------------------------
 
-### Init
+```
+npm install -g electron-cli
+```
 
-run electron-cli init to start a new electron project
+Usage
+------------------------------------------------------------------------------
+
+After installation the `electron` CLI tool will be available to you. It is the
+entrypoint for all the functionality marked as done above.
+
+### Create a new project
+
+```
+electron-cli init my-new-app
+```
+
+This will create a new folder `my-new-app`, initialize a Git project in it,
+add the basic electron project structure.
