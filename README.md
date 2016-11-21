@@ -45,3 +45,11 @@ adds the basic electron quick start project.
 electron-cli stats
 ```
 This will print the versions of the current installed electron instance
+
+### Start electron application
+
+```
+electron-cli start --global
+```
+This will run the electron application on the current directory if you provide the
+global flag it will run the application with the globally installed electron instance.
