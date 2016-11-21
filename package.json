@@ -1,6 +1,6 @@
 {
   "name": "electron-cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Command line tool for developing useful electron apps",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "coverage": "nyc --reporter=lcov --all --reporter=text-lcov npm test"
   },
   "bin": {
-    "electron-cli": "./dist/cli.js"
+    "electron-cli": "dist/cli.js"
   },
   "keywords": [
     "electron",
@@ -21,6 +21,7 @@
   "author": "Rodrigo Quezada",
   "license": "MIT",
   "dependencies": {
+    "babel-runtime": "^6.18.0",
     "chalk": "^1.1.3",
     "configstore": "^2.1.0",
     "cpy": "^4.0.1",
