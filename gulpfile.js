@@ -6,9 +6,10 @@ const babel = require('gulp-babel')
 const gutil = require('gulp-util')
 const chmod = require('gulp-chmod')
 const mocha = require('gulp-mocha')
+const del = require('del')
 
 gulp.task('dev',(done)=> {
-  runSequence('lint','babel','watch','chmod','mocha',done)
+  runSequence('clean','lint','babel','chmod','mocha','watch',done)
 })
 
 gulp.task('lint', () => {
@@ -36,7 +37,14 @@ gulp.task('chmod',()=> {
   return taskSrc.on('error',handleError)
 })
 
+gulp.task('clean',(cb)=> {
+  del(['dist','coverage']).then(()=> {
+    cb()
+  })
+})
+
 gulp.task('babel',()=> {
+  process.env.NODE_ENV = 'production'
   const taskSrc = combine.obj([
     gulp.src('./src/**/*.js'),
     babel(),
@@ -47,8 +55,9 @@ gulp.task('babel',()=> {
 })
 
 gulp.task('mocha',()=> {
+  process.env.NODE_ENV = 'test'
   const taskSrc = combine.obj([
-    gulp.src('./test/**/*-test.js',{read: false}),
+    gulp.src('./test/**/*-test.js'),
     mocha({
       reporter: 'progress',
       require: ['./test/.setup.js']

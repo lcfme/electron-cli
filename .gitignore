@@ -42,3 +42,5 @@ jspm_packages
 
 # Compiled babel
 dist
+
+.DS_Store

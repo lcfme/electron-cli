@@ -4,9 +4,10 @@
   "description": "Command line tool for developing useful electron apps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "gulp mocha",
     "start": "./dist/cli.js",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "coverage": "nyc --reporter=lcov --all --reporter=text-lcov npm test"
   },
   "bin": {
     "electron-cli": "./bin/electron-cli"
@@ -24,7 +25,6 @@
     "configstore": "^2.1.0",
     "cpy": "^4.0.1",
     "exit": "^0.1.2",
-    "gulp-mocha": "^3.0.1",
     "inquirer": "^1.2.1",
     "jsonfile": "^2.4.0",
     "leek": "0.0.23",
@@ -39,6 +39,7 @@
     "yargs": "^5.0.0"
   },
   "devDependencies": {
+    "babel-plugin-istanbul": "^3.0.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-async-to-generator": "^6.16.0",
     "babel-plugin-transform-object-rest-spread": "^6.19.0",
@@ -46,6 +47,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-stage-2": "^6.18.0",
     "chai": "^3.5.0",
+    "del": "^2.2.2",
     "eslint": "^3.10.0",
     "eslint-config-airbnb-base": "^10.0.1",
     "eslint-config-standard": "^6.2.1",
@@ -56,9 +58,22 @@
     "gulp-babel": "^6.1.2",
     "gulp-chmod": "^2.0.0",
     "gulp-eslint": "^3.0.1",
+    "gulp-mocha": "^3.0.1",
     "gulp-util": "^3.0.7",
     "mocha": "^3.1.0",
+    "mock-fs": "^3.12.1",
+    "nyc": "^9.0.1",
     "run-sequence": "^1.2.2",
     "stream-combiner2": "^1.1.1"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "sourceMap": false,
+    "instrument": false
   }
 }

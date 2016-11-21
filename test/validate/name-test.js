@@ -1,5 +1,6 @@
-import validateName from '../../src/validate/name'
 import { expect } from 'chai'
+
+import validateName from '../../src/validate/name'
 
 describe('name validation',()=> {
   it('should return no errors',()=> {
