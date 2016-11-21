@@ -5,9 +5,10 @@ const combine = require('stream-combiner2')
 const babel = require('gulp-babel')
 const gutil = require('gulp-util')
 const chmod = require('gulp-chmod')
+const mocha = require('gulp-mocha')
 
 gulp.task('dev',(done)=> {
-  runSequence('lint','babel','watch','chmod',done)
+  runSequence('lint','babel','watch','chmod','mocha',done)
 })
 
 gulp.task('lint', () => {
@@ -43,6 +44,16 @@ gulp.task('babel',()=> {
   ])
 
   return taskSrc.on('error', handleError)
+})
+
+gulp.task('mocha',()=> {
+  const taskSrc = combine.obj([
+    gulp.src('./test/**/*-test.js',{read: false}),
+    mocha({
+      reporter: 'progress',
+      require: ['./test/.setup.js']
+    })
+  ])
 })
 
 gulp.task('watch',()=> {
