@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 
 process.on('unhandledRejection', (err) => {
-  if(err.stack){
+  if (err.stack) {
     console.error(chalk.red(err.stack))
   } else {
     console.error(chalk.red(err))
@@ -10,7 +10,7 @@ process.on('unhandledRejection', (err) => {
 })
 
 process.on('uncaughtException', (err) => {
-  if(err.stack){
+  if (err.stack) {
     console.error(chalk.red(err.stack))
   } else {
     console.error(chalk.red(err))
