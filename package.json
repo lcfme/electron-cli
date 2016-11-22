@@ -28,6 +28,7 @@
     "configstore": "^2.1.0",
     "cpy": "^4.0.1",
     "denodeify": "^1.2.1",
+    "electron-packager": "^8.3.0",
     "exit": "^0.1.2",
     "inquirer": "^1.2.1",
     "jsonfile": "^2.4.0",
