@@ -9,9 +9,8 @@ export const builder = {}
 
 export const handler = async (argv) => {
   console.log(os.arch())
-  console.log(os.platform());
-  const {version, dependencies } = require(pathFromCwd('package.json'))
+  console.log(os.platform())
+  const { version, dependencies } = require(pathFromCwd('package.json'))
 
-
-  await pack(os.arch(),os.platform(),semver.clean(dependencies.electron),version)
+  await pack(os.arch(), os.platform(), semver.clean(dependencies.electron), version)
 }
