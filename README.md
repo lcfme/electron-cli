@@ -14,7 +14,7 @@ Features
 * [done] Create new project
 * [done] Get useful electron info such as(version numbers of Chromium, Node.js , and electron-cli)
 * [done] Run the electron app on the current directory either with the locally installed electron or the global one
-* [wip] Pack the application for distribution
+* [done] Pack the application for distribution
 * [wip] Build native node modules
 
 Installation
@@ -53,3 +53,11 @@ electron-cli start --global
 ```
 This will run the electron application on the current directory if you provide the
 global flag it will run the application with the globally installed electron instance.
+
+### Pack electron application
+
+```
+electron-cli pack
+```
+
+This will pack the application on the current directory with `electron-packager`
