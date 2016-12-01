@@ -8,6 +8,8 @@ electron-cli
 
 An [electron](http://electron.atom.io/) command line utility.
 
+[Repo](https://github.com/Ikana/electron-cli)
+
 Features
 ------------------------------------------------------------------------------
 
