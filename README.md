@@ -53,7 +53,7 @@ This will print the versions of the current installed electron instance
 ```
 electron-cli start --global
 ```
-This will run the electron application on the current directory if you provide the
+This will run the electron application on the current directory, if you provide the
 global flag it will run the application with the globally installed electron instance.
 
 ### Pack electron application

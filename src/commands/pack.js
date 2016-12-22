@@ -18,8 +18,8 @@ export const handler = async (argv) => {
 
   await packager({
     dir: process.cwd(),
-    version:semver.clean(dependencies.electron),
-    arch:os.arch(),
+    version: semver.clean(dependencies.electron),
+    arch: os.arch(),
     platform: os.platform()
   })
 
