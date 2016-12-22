@@ -1,6 +1,6 @@
 {
   "name": "electron-cli",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Command line tool for developing useful electron apps",
   "main": "dist/cli.js",
   "scripts": {
@@ -13,7 +13,11 @@
   "bin": {
     "electron-cli": "dist/cli.js"
   },
-  "homepage": "git@github.com:Ikana/electron-cli.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Ikana/electron-cli.git"
+  },
+  "homepage": "https://github.com/Ikana/electron-cli",
   "keywords": [
     "electron",
     "cli",
