@@ -8,6 +8,7 @@
     "start": "./dist/cli.js",
     "dev": "gulp dev",
     "lint": "gulp lint",
+    "deploy": "gulp deploy",
     "coverage": "nyc --reporter=lcov --all --reporter=text-lcov npm test"
   },
   "bin": {
