@@ -1,10 +1,13 @@
 electron-cli
 ==============================================================================
 
-[![Latest NPM release][npm-badge]][npm-badge-url]
-
 [npm-badge]: https://img.shields.io/npm/v/ember-cli.svg
 [npm-badge-url]: https://www.npmjs.com/package/electron-cli
+
+[![Latest NPM release][npm-badge]][npm-badge-url]
+[![npm version](https://badge.fury.io/js/electron-cli.svg)](https://www.npmjs.com/package/electron-cli)
+[![npm](https://img.shields.io/npm/dt/electron-cli.svg?maxAge=2592000)](https://www.npmjs.com/package/electron-cli)
+[![license](https://img.shields.io/github/license/electron-userland/electron-forge.svg)](https://github.com/Ikana/electron-cli/blob/master/LICENSE)
 
 An [electron](http://electron.atom.io/) command line utility.
 
@@ -18,6 +21,18 @@ Features
 * [done] Run the electron app on the current directory either with the locally installed electron or the global one
 * [done] Pack the application for distribution
 * [wip] Build native node modules
+
+
+# Getting Started
+
+**Note**: Electron Cli requires Node 6 or above, plus git installed.
+
+```bash
+npm install -g electron-cli
+electron-cli init new-app
+cd new-app
+electron-cli start
+```
 
 Installation
 ------------------------------------------------------------------------------
