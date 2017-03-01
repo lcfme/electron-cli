@@ -5,6 +5,7 @@ import inquirer from 'inquirer'
 import username from 'username'
 import cpy from 'cpy'
 import chalk from 'chalk'
+import path from 'path'
 
 import validateName from '../validate/name'
 import checkSystem from '../validate/check-system'
@@ -100,8 +101,10 @@ export const handler = async (argv) => {
 
   const main = 'main.js'
 
+  const basePath = path.join(__dirname, '..', 'templates')
+
   if (boilerPlate) {
-    await cpy(['templates/index.html', 'templates/main.js'], createdDir)
+    await cpy([path.jon(basePath, 'index.html'), path.jon(basePath, 'main.sj')], createdDir)
   }
 
   await initJson(createdDir, { name, dependencies, scripts, main, ...rest })
