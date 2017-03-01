@@ -104,7 +104,7 @@ export const handler = async (argv) => {
   const basePath = path.join(__dirname, '..', 'templates')
 
   if (boilerPlate) {
-    await cpy([path.jon(basePath, 'index.html'), path.jon(basePath, 'main.sj')], createdDir)
+    await cpy([path.join(basePath, 'index.html'), path.join(basePath, 'main.js')], createdDir)
   }
 
   await initJson(createdDir, { name, dependencies, scripts, main, ...rest })

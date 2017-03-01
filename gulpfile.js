@@ -15,7 +15,7 @@ function handleError (err) {
 }
 
 gulp.task('dev', (done) => {
-  runSequence('clean', 'lint', 'babel', 'chmod', 'mocha', 'watch', done)
+  runSequence('clean', 'lint', 'babel', 'chmod', 'mocha', 'copy', 'watch', done)
 })
 
 gulp.task('deploy', (done) => {
