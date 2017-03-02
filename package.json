@@ -1,6 +1,6 @@
 {
   "name": "electron-cli",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Command line tool for developing useful electron apps",
   "main": "dist/cli.js",
   "scripts": {

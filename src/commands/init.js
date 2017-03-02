@@ -106,7 +106,8 @@ export const handler = async (argv) => {
   if (boilerPlate) {
     const filesToDownload = [
       'https://raw.githubusercontent.com/Ikana/electron-cli/master/templates/main.js',
-      'https://raw.githubusercontent.com/Ikana/electron-cli/master/templates/index.html'
+      'https://raw.githubusercontent.com/Ikana/electron-cli/master/templates/index.html',
+      'https://raw.githubusercontent.com/Ikana/electron-cli/master/templates/.gitignore'
     ]
 
     const fileNames = filesToDownload.map(f => f.split('/').pop())
