@@ -3,9 +3,9 @@ import fetch from 'node-fetch'
 import semver from 'semver'
 import inquirer from 'inquirer'
 import username from 'username'
-import cpy from 'cpy'
 import chalk from 'chalk'
 import path from 'path'
+import denodeify from 'denodeify'
 
 import validateName from '../validate/name'
 import checkSystem from '../validate/check-system'
@@ -14,6 +14,8 @@ import initJson from '../init/json'
 import initGit from '../init/git'
 import initNpm from '../init/npm'
 import changeDir from '../util/change-dir'
+
+const writeFile = denodeify(require('fs').writeFile)
 
 export const command = 'init [dir]'
 export const desc = 'Creates a new electron application'
@@ -101,12 +103,18 @@ export const handler = async (argv) => {
 
   const main = 'main.js'
 
-  const basePath = path.join(__dirname, '..', 'templates')
-
   if (boilerPlate) {
-    await cpy([path.join(basePath, 'index.html'), path.join(basePath, 'main.js')], createdDir)
-  }
+    const filesToDownload = [
+      'https://raw.githubusercontent.com/Ikana/electron-cli/master/templates/main.js',
+      'https://raw.githubusercontent.com/Ikana/electron-cli/master/templates/index.html'
+    ]
 
+    const fileNames = filesToDownload.map(f => f.split('/').pop())
+
+    const fileContent = await Promise.all(filesToDownload.map(f => fetch(f).then(r => r.text())))
+
+    await fileNames.map((el, index) => writeFile(path.join(createdDir, el), fileContent[index], 'utf8'))
+  }
   await initJson(createdDir, { name, dependencies, scripts, main, ...rest })
 
   await changeDir(createdDir)
